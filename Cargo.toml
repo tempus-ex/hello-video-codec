@@ -1,0 +1,9 @@
+[package]
+name = "hello-video-codec"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+thiserror = "1.0.25"
+tiff = "0.7.0"
+bitbit = "0.2.0"
