@@ -6,3 +6,4 @@ edition = "2018"
 [dependencies]
 thiserror = "1.0.25"
 tiff = "0.7.0"
+png = "0.16"

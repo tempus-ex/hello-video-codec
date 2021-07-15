@@ -137,12 +137,12 @@ mod tests {
 
     #[test]
     fn test_codec_12131() {
-        let frame = RGB48Frame::open("src/testdata/tears_of_steel_12130.tif").unwrap();
+        let frame = RGB48Frame::from_tiff("src/testdata/tears_of_steel_12130.tif").unwrap();
         assert_eq!(frame.data.len(), 4096 * 1714 * 3); // 42,123,264 bytes uncompressed
 
         let mut encoded = Vec::new();
         frame.encode::<Codec, _>(&mut encoded).unwrap();
-        assert_eq!(encoded.len(), 25526583);
+        assert_eq!(encoded.len(), 25526584);
 
         let decoded = RGB48Frame::decode::<Codec, _>(&*encoded, frame.width, frame.height).unwrap();
         assert_eq!(frame == decoded, true);
@@ -150,12 +150,12 @@ mod tests {
 
     #[test]
     fn test_codec_12209() {
-        let frame = RGB48Frame::open("src/testdata/tears_of_steel_12209.tif").unwrap();
+        let frame = RGB48Frame::from_tiff("src/testdata/tears_of_steel_12209.tif").unwrap();
         assert_eq!(frame.data.len(), 4096 * 1714 * 3); // 42,123,264 bytes uncompressed
 
         let mut encoded = Vec::new();
         frame.encode::<Codec, _>(&mut encoded).unwrap();
-        assert_eq!(encoded.len(), 28270586);
+        assert_eq!(encoded.len(), 28270587);
 
         let decoded = RGB48Frame::decode::<Codec, _>(&*encoded, frame.width, frame.height).unwrap();
         assert_eq!(frame == decoded, true);
